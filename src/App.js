@@ -27,7 +27,7 @@ import PageAxiosTest from "Pages/Test/PageAxiosTest";
 import RouteMap from "RouteMap";
 
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import { Avatar, Box, Button, Card, CardContent, CardHeader, CardMedia, IconButton, Paper, Skeleton, Stack, Step, StepContent, StepLabel, Stepper, Tab, Tabs, Typography } from "@mui/material";
+import { Avatar, Box, Button, Card, CardContent, CardHeader, CardMedia, IconButton, LinearProgress, Paper, Rating, Skeleton, Stack, Step, StepContent, StepLabel, Stepper, Tab, Tabs, Typography } from "@mui/material";
 
 import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
 import CallIcon from '@mui/icons-material/Call';
@@ -37,6 +37,11 @@ import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import srcmLogo from "./Assets/Images/srcmlogo.png"
 import logo from './Assets/Images/IntroImage.svg';
 
+
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+
+import { styled } from '@mui/material/styles';
 
 function handleOnNextClick(params) {
   toast("clicked");
@@ -100,6 +105,14 @@ const steps = [
   },
 ];
 
+const StyledRating = styled(Rating)({
+  '& .MuiRating-iconFilled': {
+    color: '#ff6d75',
+  },
+  '& .MuiRating-iconHover': {
+    color: '#ff3d47',
+  },
+});
 
 
 function App() {
@@ -112,11 +125,14 @@ function App() {
     load: false
   });
 
-  import('./Assets/style.css').finally(i => {
-    if (!state.load) {
-      setState({ ...state, load: true });
-    }
-  });
+  setTimeout(() => {
+    import('./Assets/style.css').finally(i => {
+      if (!state.load) {
+        setState({ ...state, load: true });
+      }
+    });
+  })
+
 
   const handleOnFabClick = () => {
     setState({ ...state, openDrawer: !state.openDrawer });
@@ -247,10 +263,15 @@ function App() {
 
         <Card className="introWelcome__cardContainer">
           <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-            <Tabs variant="fullWidth" value={value} onChange={handleChange} aria-label="basic tabs example">
+            <Tabs
+              allowScrollButtonsMobile
+              variant="scrollable"
+              scrollButtons="auto"
+              value={value} onChange={handleChange} aria-label="basic tabs example">
               <Tab label="سامانه بین‌المللی آموزشی AKE" {...a11yProps(0)} />
-              <Tab label="Item Two" {...a11yProps(1)} />
-              <Tab label="Item Three" {...a11yProps(2)} />
+              <Tab label="محصول ۲" {...a11yProps(1)} />
+              <Tab label="محصول تست" {...a11yProps(2)} />
+              <Tab label="محصول تست" {...a11yProps(3)} />
             </Tabs>
           </Box>
           <TabPanel value={value} index={0}>
@@ -259,10 +280,53 @@ function App() {
               بزرگترین سامانه اختصاصی علمی قرن
             </h1>
             <Typography sx={{ fontSize: "14px", textAlign: "justify" }}>
-              سامانه بین‌المللی آموزشی AKE (Achieving Knowledge And Earning) با هدف بهبود روند آموزشی و کسب درآمد از یادگیری و یاددهی با ایده‌‌ای نو و فوق‌العاده در حال طراحی و اجرا توسط سورس مدیا میباشد و اطلاعات دقیق روند انجام آن در زیر قابل مشاهده است.
+              سامانه بین‌المللی آموزشی
+
+              <p>
+                AKE (Achieving Knowledge And Earning)
+              </p>
+              با هدف بهبود روند آموزشی و کسب درآمد از یادگیری و یاددهی با ایده‌‌ای نو و فوق‌العاده در حال طراحی و اجرا توسط سورس مدیا میباشد و اطلاعات دقیق روند انجام آن در زیر قابل مشاهده است.
             </Typography>
 
-            <img src={logo} className="App-logo" alt="logo" style={{ objectFit: "none", width: "100%" }} />
+            <Box display="flex" alignItems="center" sx={{ fontSize: "14px", textAlign: "justify", mt: 2 }}>
+              <Typography sx={{ fontSize: "14px", textAlign: "justify", flex: 1 }}>
+                طراحی اسکچ  100%
+              </Typography>
+              <LinearProgress sx={{ flex: 1.5 }} variant="determinate" value={100} />
+            </Box>
+
+            <Box display="flex" alignItems="center" sx={{ fontSize: "14px", textAlign: "justify", mt: 2 }}>
+              <Typography sx={{ fontSize: "14px", textAlign: "justify", flex: 1 }}>
+                پیشرفت کلی   60%
+              </Typography>
+              <LinearProgress sx={{ flex: 1.5 }} variant="determinate" value={60} />
+            </Box>
+
+            <Box display="flex" alignItems="center" sx={{ fontSize: "14px", textAlign: "justify", mt: 2 }}>
+              <Typography sx={{ fontSize: "14px", textAlign: "justify", flex: 1 }}>
+                میزان رضایت:
+              </Typography>
+
+              <Rating sx={{}} size="large" name="read-only" value={4} readOnly />
+            </Box>
+
+            <Box display="flex" alignItems="center" sx={{ fontSize: "14px", textAlign: "justify", mt: 2 }}>
+              <Typography sx={{ fontSize: "14px", textAlign: "justify", flex: 1 }}>
+                میزان محبوبیت:
+              </Typography>
+
+              <StyledRating
+                name="customized-color"
+                defaultValue={4}
+                readOnly
+                getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+                precision={0.5}
+                icon={<FavoriteIcon fontSize="inherit" />}
+                emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
+              />
+            </Box>
+
+            <img src={logo} className="App-logo" alt="logo" style={{ marginTop: "32px", objectFit: "none", width: "100%" }} />
 
           </TabPanel>
           <TabPanel value={value} index={1}>
@@ -278,6 +342,18 @@ function App() {
               <Skeleton variant="rounded" width={210} height={60} />
             </Stack>
           </TabPanel>
+
+          <TabPanel value={value} index={3}>
+            <Stack spacing={1}>
+              {/* For variant="text", adjust the height via font-size */}
+              <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
+              {/* For other variants, adjust the size with `width` and `height` */}
+              <Skeleton variant="circular" width={40} height={40} />
+              <Skeleton variant="rectangular" width={210} height={60} />
+              <Skeleton variant="rounded" width={210} height={60} />
+            </Stack>
+          </TabPanel>
+
         </Card>
 
 
