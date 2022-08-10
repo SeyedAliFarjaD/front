@@ -11,11 +11,15 @@ body {
     /*must be for modals (dialogs)*/
     padding: 0 !important;
     margin: 0 !important;
+    background-color: #eeeeee;
 }
 
 #root {
     font-family: inherit;
     height: 100%;
+    max-width: 444px;
+    margin: auto;
+    background-color: #ffffff;
 }
 
 * {
@@ -98,9 +102,9 @@ body {
 .introWelcome__button {
     border-radius: 100px;
     width: 100%;
-    height: 48px;
+    height: 42px;
     font-family: Vazir, serif;
-    margin: 16px;
+    /* margin: 16px; */
 }
 
 .introWelcome__title {
