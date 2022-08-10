@@ -1,0 +1,137 @@
+.text-value {
+	background: #006fff22;
+	border-radius: 8px;
+	text-align: center;
+}
+
+.shadow {
+	box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+}
+
+@keyframes spin {
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes flip {
+
+	from,
+	90% {
+		transform: rotate(0);
+	}
+
+	to {
+		transform: rotate(180deg);
+	}
+}
+
+
+.slide-enter,
+.slide-exit {
+	/* transition: opacity 300ms ease-out, transform 300ms ease-out; */
+	/* delay 500 */
+	transition: transform 500ms ease-out;
+}
+
+.slide-enter {
+	/* opacity: 0.5; */
+	transform: translateX(100%);
+	z-index: 1;
+}
+
+.slide-enter.slide-enter-active {
+	transform: translateX(0%);
+	/* opacity: 1; */
+}
+
+.slide-exit {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	transform: translateX(0%);
+	translate: 0 -50%;
+	/* opacity: 1; */
+}
+
+.slide-exit-active {
+	transform: translateX(-100%);
+	/* opacity: 0.5; */
+}
+
+
+
+
+/* back */
+.slideback-enter,
+.slideback-exit {
+	/* transition: opacity 300ms ease-out, transform 300ms ease-out; */
+	/* delay 500 */
+	transition: transform 500ms ease-out;
+}
+
+.slideback-enter {
+	/* opacity: 0.5; */
+	transform: translateX(-100%);
+	z-index: 1;
+}
+
+.slideback-enter.slideback-enter-active {
+	transform: translateX(0%);
+	/* opacity: 1; */
+}
+
+.slideback-exit {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	transform: translateX(0%);
+	translate: 0 -50%;
+	/* opacity: 1; */
+}
+
+.slideback-exit-active {
+	transform: translateX(100%);
+	/* opacity: 0.5; */
+}
+
+
+
+
+
+
+
+
+.fade-enter {
+	opacity: 0;
+	z-index: 1;
+}
+
+.fade-enter.fade-enter-active {
+	opacity: 1;
+
+	transition: opacity 250ms ease-out, ;
+}
+
+.fade-exit {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	translate: -50% -50%;
+	opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+	opacity: 0;
+
+	transition: opacity 250ms ease-out, ;
+}
+
+/* chart logo */
+/* .chartContainer canvas:nth-of-type(2) {
+	display: none;
+} */

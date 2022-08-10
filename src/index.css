@@ -1,0 +1,109 @@
+html {
+  overflow: hidden;
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+  height: 100%;
+}
+
+#root {
+  font-family: inherit;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.appContainer {
+  background-color: #fff;
+  margin: auto;
+  width: 100%;
+  position: relative;
+  will-change: transform;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .dashboard {
+    margin: 32px 4px !important;
+  }
+}
+
+.TextField-with-border-radius fieldset {
+  border-radius: 100px;
+}
+
+.TextField-with-border-radius input {
+  border-radius: 100px;
+}
+
+.scroll__container::-webkit-scrollbar {
+  /* width: 8px;
+  height: 8px;
+  padding: 4px; */
+}
+
+.scroll__container::-webkit-scrollbar-thumb {
+  /* height: 50px;
+  background-color: rgba(238, 238, 238, 0.5) !important; */
+
+
+  /*-webkit-border-radius: 16px;*/
+  /*-moz-border-radius: 16px;*/
+  /*border-radius: 16px*/
+}
+
+.scroll__container:not(.ov-x) {
+  overflow-y: auto;
+}
+
+.scroll__container.ov-x {
+  overflow-x: auto;
+}
+
+.scroll__container.ov-xy {
+  overflow: auto;
+}
+
+.scroll__container::-webkit-scrollbar-thumb:active {
+  background-color: rgba(238, 238, 238, 0.9) !important;
+}
+
+.scroll__container:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(238, 238, 238, 0.6) !important;
+}
+
+.scroll__container:hover::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(238, 238, 238, 0.7) !important;
+}
+
+.scroll__container:hover::-webkit-scrollbar-thumb:active {
+  background-color: rgba(238, 238, 238, 0.9) !important;
+}
+
+.scroll__container:hover::-webkit-scrollbar-track {
+  background-color: rgba(238, 238, 238, 0.2) !important;
+}
+
+.Toastify__toast {
+  padding: 0 !important;
+  box-shadow: none !important;
+  background: none !important;
+}
+
+.Toastify__toast-body {
+  padding: 0 !important;
+}

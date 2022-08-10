@@ -1,0 +1,129 @@
+html {
+    overflow: auto;
+    font-family: Vazir, serif;
+    height: 100%;
+}
+
+body {
+    font-family: Vazir, serif;
+    height: 100%;
+
+    /*must be for modals (dialogs)*/
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+#root {
+    font-family: inherit;
+    height: 100%;
+}
+
+* {
+    font-family: Vazir, serif !important;
+}
+
+.header {
+    /* box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px, rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px; */
+    /* box-shadow: rgb(0 0 0 / 20%) 0px 3px 5px -1px, rgb(0 0 0 / 14%) 0px 6px 10px 0px, rgb(0 0 0 / 12%) 0px 1px 18px 0px; */
+    box-shadow: 0 0 10px #bfcede;
+    height: 54px;
+    display: flex;
+    align-items: center;
+}
+
+.header__logo {
+    width: 34px;
+    height: 34px;
+    margin: 16px;
+}
+
+
+.header__title {
+
+    font-size: 12px;
+}
+
+.header__button {
+    /* transition: box-shadow 0.3s ease-in-out; */
+    color: #3f3f3f;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    height: 34px;
+    min-width: 34px;
+    width: 34px;
+    margin: 16px;
+    /* box-shadow: rgb(0 0 0 / 20%) 0px 3px 5px -1px, rgb(0 0 0 / 14%) 0px 6px 10px 0px, rgb(0 0 0 / 12%) 0px 1px 18px 0px; */
+    animation: animation__shadow alternate-reverse infinite 1000ms ease-in-out;
+    box-shadow: 0 0 10px #bfcede;
+}
+
+@keyframes animation__shadow {
+    from {
+        /* box-shadow: rgb(0 0 0 / 10%) 0px 3px 5px -1px, rgb(0 0 0 /5%) 0px 6px 10px 0px, rgb(0 0 0 / 0%) 0px 1px 18px 0px; */
+        transform: scale(0.9);
+    }
+
+    to {
+        /* box-shadow: rgb(0 0 0 / 30%) 0px 3px 5px -1px, rgb(0 0 0 / 20%) 0px 6px 10px 0px, rgb(0 0 0 / 17%) 0px 1px 18px 0px; */
+        transform: scale(1);
+    }
+}
+
+
+
+.introWelcome__textHeader {
+    text-align: center;
+    font-size: 38px;
+}
+
+.introWelcome__textPargraph {
+    text-align: justify;
+    font-size: 16px;
+    padding: 16px;
+
+}
+
+.introWelcome__cardContainer {
+    margin: 64px 12px;
+}
+
+.introWelcome__image {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+
+
+
+.introWelcome__button {
+    border-radius: 100px;
+    width: 100%;
+    height: 48px;
+    font-family: Vazir, serif;
+    margin: 16px;
+}
+
+.introWelcome__title {
+    color: #7a90aa;
+    margin-right: 32px;
+    padding-top: 8px;
+}
+
+
+@font-face {
+    font-family: Vazir;
+    font-weight: normal;
+    src: url("./fontVazir/Vazir-Regular.woff2");
+    src: url("./fontVazir/Vazir-Regular.woff2") format("woff2"), url("./fontVazir/Vazir-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: Vazir;
+    font-weight: bold;
+    src: url("./fontVazir/Vazir-Bold.woff2");
+    src: url("./fontVazir/Vazir-Bold.woff2") format("woff2"), url("./fontVazir/Vazir-Bold.woff") format("woff");
+}
+
+/*
+endregion FontIran
+*/
