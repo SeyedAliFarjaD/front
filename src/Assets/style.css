@@ -128,6 +128,31 @@ body {
     src: url("./fontVazir/Vazir-Bold.woff2") format("woff2"), url("./fontVazir/Vazir-Bold.woff") format("woff");
 }
 
+.post__date {
+    color: #aaaaaa;
+    font-size: 12px;
+    text-align: left;
+    padding: 8px 16px ;
+}
+
+.post__subtitle {
+    margin: 16px;
+    font-size: 14px;
+    text-align: justify;
+}
+
+.post__title {
+    margin: 16px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.post__image {
+    height: 164px;
+    object-fit: cover;
+    width: 100%;
+}
+
 /*
 endregion FontIran
 */

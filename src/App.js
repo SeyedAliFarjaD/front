@@ -50,6 +50,7 @@ import Weblog from "Pages/Weblog";
 
 
 
+
 function handleOnNextClick(params) {
   toast("clicked");
 }
@@ -68,8 +69,6 @@ const history = {
   animationClass: "slide"
 }
 
-
-
 function App() {
 
 
@@ -79,14 +78,6 @@ function App() {
     openMenu: false,
     load: false
   });
-
-  setTimeout(() => {
-    import('./Assets/style.css').finally(i => {
-      if (!state.load) {
-        setState({ ...state, load: true });
-      }
-    });
-  })
 
 
   const handleOnFabClick = () => {
@@ -150,7 +141,7 @@ function App() {
 
 
       </div>
-{/* 
+      {/* 
       <Fab
         size="small"
         sx={fabStyle}
