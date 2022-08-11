@@ -8,6 +8,11 @@ const RouteMap = {
     icon: ""
   },
 
+  weblog: {
+    url: "weblog",
+    title: "weblog",
+    icon: ""
+  },
   signInOrUP: {
     url: "signinorsignup",
     title: "sign in or sign up",
